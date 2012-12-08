@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE GEDCOM SYSTEM "family.dtd" >
+<GEDCOM>
+  <HeaderRec>
+    <FileCreation Date="4 December" Time="04:30"></FileCreation>
+    <Submitter>
+      <Link Ref="submitter" Target=""/>
+    </Submitter>
+  </HeaderRec>
+<!--
+                          Simpsons
+              SimpsonBronson      Hansen
+       Gustavson                      Pettersen
+   Gustavson
+   
+-->
+  <FamilyRec Id="Simpsons">
+    <HusbFath>
+      <Link Ref="homer" Target=""/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Ref="marge" Target=""/>
+    </WifeMoth>
+    <Child>
+      <Link Ref="bart" Target=""/>
+    </Child>
+    <Child>
+      <Link Ref="lisa" Target=""/>
+    </Child>
+  </FamilyRec>
+  <!-- Left -->
+  <FamilyRec Id="SimpsonBronson">
+    <HusbFath>
+      <Link Target="" Ref="bart"/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Target="" Ref="woman1"/>
+    </WifeMoth>
+    <Child>
+      <Link Target="" Ref="debbie"/>
+    </Child>
+  </FamilyRec>
+  <FamilyRec Id="Gustavson">
+    <HusbFath>
+      <Link Target="" Ref="man1"/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Target="" Ref="debbie"/>
+    </WifeMoth>
+    <Child>
+      <Link Target="" Ref="bobby"/>
+    </Child>
+  </FamilyRec>
+  <FamilyRec Id="Gustavson2">
+    <HusbFath>
+      <Link Target="" Ref="bobby"/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Target="" Ref="woman2"/>
+    </WifeMoth>
+    <Child>
+      <Link Target="" Ref="maggie"/>
+    </Child>
+  </FamilyRec>
+  <!-- Right -->
+  <FamilyRec Id="Hansen">
+    <HusbFath>
+      <Link Target="" Ref="mrhansen"/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Target="" Ref="lisa"/>
+    </WifeMoth>
+    <Child>
+      <Link Target="" Ref="margery"/>
+    </Child>
+  </FamilyRec>
+  <FamilyRec Id="Pettersen">
+    <HusbFath>
+      <Link Target="" Ref="mrpettersen"/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Target="" Ref="margery"/>
+    </WifeMoth>
+    <Child>
+      <Link Target="" Ref="wimpy"/>
+    </Child>
+  </FamilyRec>
+  
+  
+  
+  <IndividualRec Id="mrhansen">
+    <IndivName>Fred Hansen</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  <IndividualRec Id="margery">
+    <IndivName>Margery Thailalumpanpan</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  <IndividualRec Id="mrpettersen">
+    <IndivName>Henrik Pettersen</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  <IndividualRec Id="wimpy">
+    <IndivName>Wimpy Pettersen</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  <IndividualRec Id="maggie">
+    <IndivName>Maggie Gustavson</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  
+  <IndividualRec Id="woman2">
+    <IndivName>Lisa Charleston</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  <IndividualRec Id="bobby">
+    <IndivName>Bobby Gustavson</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  
+  <IndividualRec Id="man1">
+    <IndivName>Olle Gustavson</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  
+  <IndividualRec Id="debbie">
+    <IndivName Method="" Type="" xml:lang="EN">Debbie Simpson Bronson</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  <IndividualRec Id="woman1">
+    <IndivName Method="" Type="" xml:lang="EN">Millie Bronson</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  <IndividualRec Id="submitter">
+    <IndivName Method="" Type="" xml:lang="EN">Stian Johansen</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  <IndividualRec Id="homer">
+    <IndivName Method="" Type="" xml:lang="EN">Homer Simpson</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  <IndividualRec Id="marge">
+    <IndivName Method="" Type="" xml:lang="EN">Marge Simpson</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  <IndividualRec Id="lisa">
+    <IndivName Method="" Type="" xml:lang="EN">Lisa Simpson</IndivName>
+    <Gender>Female</Gender>
+  </IndividualRec>
+  <IndividualRec Id="bart">
+    <IndivName Method="" Type="" xml:lang="EN">Bart Simpson</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+</GEDCOM>

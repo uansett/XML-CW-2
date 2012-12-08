@@ -1,0 +1,138 @@
+
+<!-- GEDCOM Root --> 
+<!-- The first level of elements contained in the GEDCOM element will be referred to as "records," that is, a family record, individual record, and so on --> 
+<!ELEMENT GEDCOM  (HeaderRec,  FamilyRec*,  IndividualRec+,  EventRec*,  LDSOrdRec*,  ContactRec*,  SourceRec*,  RepositoryRec*,  GroupRec*)>  
+
+<!-- Elements Common to Multiple Records --> 
+<!ENTITY % RecordCom "ExternalID*,  Submitter?,  Note*,  Evidence*,  Enrichment*,  Changed*">  
+
+<!-- Header Record --> 
+<!ELEMENT HeaderRec  (FileCreation,  Citation?,  Submitter,  Note?)>  
+<!-- The citation is useful when all the data in the file comes from a single source --> 
+<!-- Family Record --> 
+<!ELEMENT FamilyRec  (HusbFath?,  WifeMoth?,  Child*,  BasedOn?,  %RecordCom;)>  
+<!ATTLIST FamilyRec Id ID #REQUIRED> 
+<!-- Individual Record --> 
+<!ELEMENT IndividualRec  (IndivName*,  Gender?,  DeathStatus?,  PersInfo*,  AssocIndiv*,  DupIndiv*,  %RecordCom;)>  
+<!ATTLIST IndividualRec Id ID #REQUIRED> 
+<!-- Event Record --> 
+<!ELEMENT EventRec  (Participant+,  Date?,  Place?,  Religion?,  %RecordCom;)>  
+<!ATTLIST EventRec Id ID #REQUIRED Type CDATA #REQUIRED VitalType (birth | marriage | death ) #IMPLIED> 
+
+<!-- LDS Ordinance Record --> 
+<!ELEMENT LDSOrdRec  (Participant+,  OrdStat*,  TempleCode?,  Date?,  Place?,  BasedOn?,  %RecordCom;)>  
+<!ATTLIST LDSOrdRec Id ID #REQUIRED Type (B | C | E | SM | SP | SS | TO | W) #REQUIRED> 
+<!-- Contact Record --> 
+<!ELEMENT ContactRec  (Name,  MailAddress*,  Phone*,  Email*,  URI*,  Public?,  Note*,  Changed*,  SameIndiv*)>  
+<!ATTLIST ContactRec Id ID #REQUIRED Type CDATA #IMPLIED> 
+
+<!-- Source Record --> 
+<!ELEMENT SourceRec  (Repository*,  Title,  Article?,  Author?,  URI*,  Publishing?,  Note*,  Changed*)>  
+<!ATTLIST SourceRec Id ID #REQUIRED Type CDATA #IMPLIED xml:lang NMTOKEN #IMPLIED> 
+<!-- Repository Record --> 
+<!ELEMENT RepositoryRec  (Name,  MailAddress*,  Phone*,  Email*,  URI*,  Note*,  Changed*)>  
+<!ATTLIST RepositoryRec Id ID #REQUIRED Type CDATA #IMPLIED> 
+<!-- Group Record --> 
+<!ELEMENT GroupRec  (Name,  Contact*,  Member*,  ParentGroup*,  MailAddress*,  Phone*,  Email*,  URI*,  %RecordCom;)>  
+<!ATTLIST GroupRec Id ID #REQUIRED Type CDATA #IMPLIED> 
+
+<!-- Subrecord Elements in Alphabetical Order--> 
+<!ELEMENT Addressee (#PCDATA)>  
+<!ELEMENT AddrLine  (#PCDATA | Addressee |  PlacePart)*>  
+<!ELEMENT Age (#PCDATA)>  
+<!ELEMENT Article (#PCDATA)>  
+<!ELEMENT Association (#PCDATA)>  
+<!ELEMENT AssocIndiv  (Link,  Association,  Note*,  Citation*)>  
+<!ELEMENT Author (#PCDATA)>  
+<!ELEMENT b (#PCDATA)>  
+<!ELEMENT BasedOn  (Link*,  Note*)>  
+<!ELEMENT blockquote (#PCDATA)>  
+<!ELEMENT br EMPTY>  
+<!ELEMENT CallNbr (#PCDATA)>  
+<!ELEMENT Caption (#PCDATA) >  
+<!ELEMENT center (#PCDATA)>  
+<!ELEMENT Changed  (Contact?,  Note?)>  
+<!ATTLIST Changed Date CDATA #REQUIRED Time CDATA #REQUIRED> 
+<!ELEMENT Child  (Link,  ChildNbr?,  RelToFath?,  RelToMoth?)>  
+
+<!ELEMENT ChildNbr (#PCDATA)>  
+<!ELEMENT Citation  (Link,  Caption?,  WhereInSource?,  WhenRecorded?,  Extract*,  Note*)>  
+<!ELEMENT Contact  (Link)>  
+<!ELEMENT Coordinates (#PCDATA)>  
+<!ELEMENT Copyright (#PCDATA) >  
+<!ELEMENT Date (#PCDATA)>  
+<!ATTLIST Date Calendar CDATA #IMPLIED> 
+<!ELEMENT DeathStatus (#PCDATA)>  
+<!ELEMENT DupIndiv  (Link,  Note*,  Citation*)>  
+<!ELEMENT Email (#PCDATA)>  
+<!ELEMENT Enrichment  (Citation*)>  
+<!ELEMENT Evidence  (Citation*)>  
+<!ELEMENT ExternalID EMPTY>  
+<!ATTLIST ExternalID Type CDATA #REQUIRED Id CDATA #REQUIRED> 
+
+<!ELEMENT Extract  (#PCDATA | u |  b |  i |  blockquote |  br |  p |  sub |  sup |  center)*>  
+<!ATTLIST Extract xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT FamilyNbr (#PCDATA)>  
+<!ELEMENT FileCreation  (Product?,  Copyright?)>  
+<!ATTLIST FileCreation Date CDATA #REQUIRED Time CDATA #IMPLIED> 
+<!ELEMENT Gender (#PCDATA)>  
+<!ELEMENT HusbFath  (Link,  FamilyNbr?)>  
+<!ELEMENT i (#PCDATA)>  
+<!ELEMENT IndivName  (#PCDATA | NamePart |  IndNameVariation)*>  
+<!ATTLIST IndivName Type CDATA #IMPLIED Method CDATA #IMPLIED xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT IndNameVariation  (#PCDATA | NamePart)*>  
+<!ATTLIST IndNameVariation Type CDATA #IMPLIED Method CDATA #IMPLIED xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT Information (#PCDATA)>  
+
+<!ELEMENT Link EMPTY>  
+<!ATTLIST Link Target CDATA #REQUIRED Ref IDREF #REQUIRED> 
+<!ELEMENT Living (#PCDATA)>  
+<!ELEMENT MailAddress  (AddrLine*)>  
+<!ATTLIST MailAddress xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT Member  (Link,  Role?)>  
+<!ELEMENT Name (#PCDATA)>  
+<!ATTLIST Name Type CDATA #IMPLIED xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT NamePart (#PCDATA)>  
+<!ATTLIST NamePart Type CDATA #REQUIRED Level CDATA #IMPLIED> 
+<!ELEMENT Note (#PCDATA)>  
+<!ATTLIST Note xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT OrdStat  (Date?)>  
+<!ATTLIST OrdStat Code (bic | canceled | child | cleared | completed | dns | qualified | stillborn | submitted | uncleared) #REQUIRED> 
+<!ELEMENT p (#PCDATA)>  
+<!ELEMENT ParentGroup  (Link)>  
+<!ELEMENT Participant  (Link,  Role?,  Living?,  Age?)>  
+
+<!ELEMENT PersInfo  (Information?,  Date?,  Place?)>  
+<!ATTLIST PersInfo Type CDATA #IMPLIED> 
+<!ELEMENT Phone (#PCDATA)>  
+<!ATTLIST Phone Type CDATA #IMPLIED> 
+<!ELEMENT Place  (PlaceName?,  Coordinates?,  PlaceNameVar*)>  
+<!ELEMENT PlaceName  (#PCDATA | PlacePart)*>  
+<!ATTLIST PlaceName Method CDATA #IMPLIED xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT PlaceNameVar  (#PCDATA | PlacePart)*>  
+<!ATTLIST PlaceNameVar Method CDATA #IMPLIED xml:lang NMTOKEN #IMPLIED> 
+<!ELEMENT PlacePart (#PCDATA)>  
+<!ATTLIST PlacePart Type CDATA #IMPLIED Level (1 | 2 | 3 | 4 | 5 | 6 | 7) #IMPLIED> 
+<!ELEMENT Product  (ProductId?,  Version,  Name,  Supplier?)>  
+<!ELEMENT ProductId (#PCDATA)>  
+<!ELEMENT Public (#PCDATA)>  
+<!ELEMENT Publishing (#PCDATA)>  
+
+<!ELEMENT Religion (#PCDATA)>  
+<!ELEMENT RelToFath (#PCDATA) >  
+<!ELEMENT RelToMoth (#PCDATA) >  
+<!ELEMENT Repository  (Link,  CallNbr?)>  
+<!ELEMENT Role (#PCDATA)>  
+<!ELEMENT SameIndiv  (Link,  Note*)>  
+<!ELEMENT sub (#PCDATA)>  
+<!ELEMENT Submitter  (Link)>  
+<!ELEMENT sup (#PCDATA)>  
+<!ELEMENT Supplier  (Link)>  
+<!ELEMENT TempleCode (#PCDATA)>  
+<!ELEMENT Title (#PCDATA)>  
+<!ELEMENT u (#PCDATA)>  
+<!ELEMENT URI (#PCDATA)>  
+<!ELEMENT Version (#PCDATA)>  
+<!ELEMENT WhenRecorded (#PCDATA)>  
+<!ELEMENT WhereInSource (#PCDATA)*>  
+<!ELEMENT WifeMoth  (Link,  FamilyNbr?)>
