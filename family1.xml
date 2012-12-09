@@ -42,6 +42,20 @@
     <Child>
       <Link Target="" Ref="wembley"/>
     </Child>
+    <Child>
+      <Link Target="" Ref="onslough"/>
+    </Child>
+  </FamilyRec>
+  <FamilyRec Id="Onsloughson">
+    <HusbFath>
+      <Link Target="" Ref="onslough"/>
+    </HusbFath>
+    <WifeMoth>
+      <Link Target="" Ref="newgirl"/>
+    </WifeMoth>
+    <Child>
+      <Link Target="" Ref="peter"/>
+    </Child>
   </FamilyRec>
   <FamilyRec Id="Gustavson">
     <HusbFath>
@@ -91,6 +105,19 @@
   
   
   
+  <IndividualRec Id="peter">
+    <IndivName>Peter Oddman</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
+  <IndividualRec Id="newgirl">
+    <IndivName>Jenny Peterson</IndivName>
+    <Gender>Feale</Gender>
+  </IndividualRec>
+  
+  <IndividualRec Id="onslough">
+    <IndivName>Onslough Jackson</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>  
   <IndividualRec Id="wembley">
     <IndivName>Alfred Wembley</IndivName>
     <Gender>Male</Gender>
