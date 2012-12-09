@@ -39,6 +39,9 @@
     <Child>
       <Link Target="" Ref="debbie"/>
     </Child>
+    <Child>
+      <Link Target="" Ref="wembley"/>
+    </Child>
   </FamilyRec>
   <FamilyRec Id="Gustavson">
     <HusbFath>
@@ -88,6 +91,10 @@
   
   
   
+  <IndividualRec Id="wembley">
+    <IndivName>Alfred Wembley</IndivName>
+    <Gender>Male</Gender>
+  </IndividualRec>
   <IndividualRec Id="mrhansen">
     <IndivName>Fred Hansen</IndivName>
     <Gender>Male</Gender>
