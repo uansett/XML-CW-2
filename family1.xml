@@ -74,7 +74,7 @@
       <Link Target="" Ref="lisa"/>
     </WifeMoth>
     <Child>
-      <Link Target="" Ref="margery"/>
+      <Link Target="" Ref="marger"/>
     </Child>
   </FamilyRec>
   <FamilyRec Id="Pettersen">
@@ -82,7 +82,7 @@
       <Link Target="" Ref="mrpettersen"/>
     </HusbFath>
     <WifeMoth>
-      <Link Target="" Ref="margery"/>
+      <Link Target="" Ref="marger"/>
     </WifeMoth>
     <Child>
       <Link Target="" Ref="wimpy"/>
@@ -99,7 +99,7 @@
     <IndivName>Fred Hansen</IndivName>
     <Gender>Male</Gender>
   </IndividualRec>
-  <IndividualRec Id="margery">
+  <IndividualRec Id="marger">
     <IndivName>Margery Thailalumpanpan</IndivName>
     <Gender>Female</Gender>
   </IndividualRec>

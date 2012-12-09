@@ -20,8 +20,10 @@ let $maybeFirstChild := functx:first-node($fam/Child)
 let $maybeSecondChild := functx:last-node($fam/Child)
 for $fam2 in doc("family1.xml")/GEDCOM/FamilyRec
 for $fam3 in doc("family1.xml")/GEDCOM/FamilyRec
-
-where (($fam2/HusbFath/Link/@Ref = $maybeFirstChild/Link/@Ref or $fam2/WifeMoth/Link/@Ref = $maybeFirstChild/Link/@Ref) and ($fam3/HusbFath/Link/@Ref = $maybeSecondChild/Link/@Ref or $fam3/WifeMoth/Link/@Ref = $maybeSecondChild/Link/@Ref) and $fam3/Child/Link/@Ref != $fam2/Child/Link/@Ref)
+let $isFamilyDecendantLeft := ($fam2/HusbFath/Link/@Ref = $maybeFirstChild/Link/@Ref or $fam2/WifeMoth/Link/@Ref = $maybeFirstChild/Link/@Ref)
+let $isFamilyDecendantRight := ($fam3/HusbFath/Link/@Ref = $maybeSecondChild/Link/@Ref or $fam3/WifeMoth/Link/@Ref = $maybeSecondChild/Link/@Ref)
+let $areNotTheSameChildren := $fam3/Child/Link/@Ref != $fam2/Child/Link/@Ref
+where ( $isFamilyDecendantLeft and $isFamilyDecendantRight and $areNotTheSameChildren)
 return (
 <CousinLeft>
 {$fam2/Child/Link}
