@@ -1,6 +1,7 @@
 declare namespace functx = "http://www.functx.com";
-declare variable $potentialCousin1 := ();
-declare variable $potentialCousin2 := ();
+declare option saxon:output "method=html";
+declare option saxon:output "doctype-system=about:legacy-compat";
+declare option saxon:output "omit-xml-declaration=yes";
 declare function functx:last-node 
   ( $nodes as node()* )  as node()? {
        
@@ -13,7 +14,7 @@ declare function functx:last-node
    ($nodes/.)[1]
  } ;
 
-<html><head><title>First Cousins</title></head>
+<html><head><title>First Cousins</title></head><body>
 {
 
 for $fam in doc("family1.xml")/GEDCOM/FamilyRec
@@ -26,14 +27,15 @@ let $isFamilyDecendantRight := ($fam3/HusbFath/Link/@Ref = $maybeSecondChild/Lin
 let $areNotTheSameChildren := $fam3/Child/Link/@Ref != $fam2/Child/Link/@Ref
 where ( $isFamilyDecendantLeft and $isFamilyDecendantRight and $areNotTheSameChildren)
 return (
-<body>
-<div id="CousinLeft">
+<div>
+<div class="CousinLeft">
 {fn:string-join(//IndividualRec[@Id = ($fam2/Child/Link/@Ref)]/IndivName/text(),', ')}
 </div>
-<div id="CousinRight">
+<div class="CousinRight">
 {fn:string-join(//IndividualRec[@Id = ($fam3/Child/Link/@Ref)]/IndivName/text(),', ')}
 </div>
-</body>
+</div>
 )
 }
+</body>
 </html>

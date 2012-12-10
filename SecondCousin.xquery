@@ -1,6 +1,7 @@
 declare namespace functx = "http://www.functx.com";
-declare variable $potentialCousin1 := ();
-declare variable $potentialCousin2 := ();
+declare option saxon:output "method=html";
+declare option saxon:output "doctype-system=about:legacy-compat";
+declare option saxon:output "omit-xml-declaration=yes";
 declare function functx:last-node 
   ( $nodes as node()* )  as node()? {
        
@@ -13,7 +14,7 @@ declare function functx:last-node
    ($nodes/.)[1]
  } ;
 
-<html><head><title>Second Cousins</title></head>
+<html><head><title>Second Cousins</title></head><body>
 {
 for $fam in doc("family1.xml")/GEDCOM/FamilyRec
 let $maybeFirstChild := functx:first-node($fam/Child)
@@ -29,14 +30,15 @@ let $isFamily2ndDecendantRight := ($fam5/HusbFath/Link/@Ref = $fam3/Child/Link/@
 let $areNotTheSameChildren := $fam4/Child/Link/@Ref != $fam5/Child/Link/@Ref
 where ( $isFamily2ndDecendantLeft and $isFamily2ndDecendantRight and $areNotTheSameChildren)
 return (
-<body>
-<div id="CousinLeft">
+<div>
+<div class="CousinLeft">
 {fn:string-join(//IndividualRec[@Id = ($fam4/Child/Link/@Ref)]/IndivName,', ')}
 </div>
-<div id="CousinRight">
+<div class="CousinRight">
 {fn:string-join(//IndividualRec[@Id = ($fam5/Child/Link/@Ref)]/IndivName,', ')}
 </div>
-</body>
+</div>
 )
 }
+</body>
 </html>
