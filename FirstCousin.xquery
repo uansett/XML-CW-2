@@ -4,16 +4,13 @@ declare option saxon:output "doctype-system=about:legacy-compat";
 declare option saxon:output "omit-xml-declaration=yes";
 declare function functx:last-node 
   ( $nodes as node()* )  as node()? {
-       
    ($nodes/.)[last()]
  } ;
  
  declare function functx:first-node 
   ( $nodes as node()* )  as node()? {
-       
    ($nodes/.)[1]
  } ;
-
 <html><head><title>First Cousins</title></head><body>
 {
 
