@@ -158,31 +158,31 @@
   </IndividualRec>
   
   <IndividualRec Id="debbie">
-    <IndivName Method="" Type="" xml:lang="EN">Debbie Simpson Bronson</IndivName>
+    <IndivName >Debbie Simpson Bronson</IndivName>
     <Gender>Female</Gender>
   </IndividualRec>
   <IndividualRec Id="woman1">
-    <IndivName Method="" Type="" xml:lang="EN">Millie Bronson</IndivName>
+    <IndivName >Millie Bronson</IndivName>
     <Gender>Female</Gender>
   </IndividualRec>
   <IndividualRec Id="submitter">
-    <IndivName Method="" Type="" xml:lang="EN">Stian Johansen</IndivName>
+    <IndivName >Stian Johansen</IndivName>
     <Gender>Male</Gender>
   </IndividualRec>
   <IndividualRec Id="homer">
-    <IndivName Method="" Type="" xml:lang="EN">Homer Simpson</IndivName>
+    <IndivName >Homer Simpson</IndivName>
     <Gender>Male</Gender>
   </IndividualRec>
   <IndividualRec Id="marge">
-    <IndivName Method="" Type="" xml:lang="EN">Marge Simpson</IndivName>
+    <IndivName >Marge Simpson</IndivName>
     <Gender>Female</Gender>
   </IndividualRec>
   <IndividualRec Id="lisa">
-    <IndivName Method="" Type="" xml:lang="EN">Lisa Simpson</IndivName>
+    <IndivName >Lisa Simpson</IndivName>
     <Gender>Female</Gender>
   </IndividualRec>
   <IndividualRec Id="bart">
-    <IndivName Method="" Type="" xml:lang="EN">Bart Simpson</IndivName>
+    <IndivName >Bart Simpson</IndivName>
     <Gender>Male</Gender>
   </IndividualRec>
 </GEDCOM>

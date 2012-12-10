@@ -13,7 +13,7 @@ declare function functx:last-node
    ($nodes/.)[1]
  } ;
 
-<secondCousinOnceRemoved>
+<html><head><title>Secon Cousin Once Removed</title></head>
 {
 for $fam in doc("family1.xml")/GEDCOM/FamilyRec
 let $maybeFirstChild := functx:first-node($fam/Child)
@@ -32,16 +32,18 @@ let $isOnceRemovedRight := ($fam6/HusbFath/Link/@Ref = $fam3/Child/Link/@Ref or 
 let $areNotTheSameChildren := $fam6/Child/Link/@Ref != $fam5/Child/Link/@Ref
 where ( $isFamily2ndDecendantLeft and $isFamily2ndDecendantRight and $areNotTheSameChildren and ($isOnceRemovedLeft != $isOnceRemovedRight))
 return (
-<CousinLeft>
+<body>
+<div id="CousinLeft">
 {if($isOnceRemovedLeft) then 
-$fam6/Child/Link 
-else ($fam4/Child/Link)}
-</CousinLeft>,
-<CousinRight>
+fn:string-join(//IndividualRec[@Id = ($fam6/Child/Link/@Ref)]/IndivName,', ') 
+else (fn:string-join(//IndividualRec[@Id = ($fam4/Child/Link/@Ref)]/IndivName,', '))}
+</div>
+<div id="CousinRight">
 {if($isOnceRemovedRight) then 
-$fam6/Child/Link 
-else($fam5/Child/Link)}
-</CousinRight>
+fn:string-join(//IndividualRec[@Id = ($fam6/Child/Link/@Ref)]/IndivName,', ') 
+else(fn:string-join(//IndividualRec[@Id = ($fam5/Child/Link/@Ref)]/IndivName,', '))}
+</div>
+</body>
 )
 }
-</secondCousinOnceRemoved>
+</html>

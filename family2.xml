@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE GEDCOM SYSTEM "family.dtd" >
+<GEDCOM>
+    <HeaderRec>
+        <FileCreation Date="4 December" Time="04:30"></FileCreation>
+        <Submitter>
+            <Link Ref="submitter" Target=""/>
+        </Submitter>
+    </HeaderRec>
+
+    <FamilyRec Id="Charleston">
+        <HusbFath>
+            <Link Ref="harry" Target=""/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Ref="bernadette" Target=""/>
+        </WifeMoth>
+        <Child>
+            <Link Ref="george" Target=""/>
+        </Child>
+        <Child>
+            <Link Ref="hairy" Target=""/>
+        </Child>
+    </FamilyRec>
+    <!-- Left -->
+    <FamilyRec Id="Charleston2">
+        <HusbFath>
+            <Link Target="" Ref="george"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="charlotte"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="lily"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="emily"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Butcher">
+        <HusbFath>
+            <Link Target="" Ref="frank"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="emily"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="millie"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="sam"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="tipsy"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Churchill">
+        <HusbFath>
+            <Link Target="" Ref="pedro"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="millie"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="century"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="fox"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Coroner">
+        <HusbFath>
+            <Link Target="" Ref="emanuel"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="tipsy"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="cherry"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="angel"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Butcher2">
+        <HusbFath>
+            <Link Target="" Ref="sam"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="emma"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="dork"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="dooley"/>
+        </Child>
+    </FamilyRec>
+    <!-- Right -->
+    <FamilyRec Id="Charleston3">
+        <HusbFath>
+            <Link Target="" Ref="hairy"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="lizzy"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="ahmed"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="xin"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Charleston4">
+        <HusbFath>
+            <Link Target="" Ref="ahmed"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="filly"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="tic"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Charleston5">
+        <HusbFath>
+            <Link Target="" Ref="xin"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="xon"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="tac"/>
+        </Child>
+        <Child>
+            <Link Target="" Ref="toe"/>
+        </Child>
+    </FamilyRec>
+    <FamilyRec Id="Baptista">
+        <HusbFath>
+            <Link Target="" Ref="toe"/>
+        </HusbFath>
+        <WifeMoth>
+            <Link Target="" Ref="rebel"/>
+        </WifeMoth>
+        <Child>
+            <Link Target="" Ref="eileen"/>
+        </Child>
+    </FamilyRec>
+    
+    
+    
+    <IndividualRec Id="harry">
+        <IndivName>Harry Charleston</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="bernadette">
+        <IndivName>Bernadette Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    
+    <IndividualRec Id="george">
+        <IndivName>George Charleston</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>  
+    <IndividualRec Id="hairy">
+        <IndivName>Hairy Charleston</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="charlotte">
+        <IndivName>Charlotte Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="lily">
+        <IndivName>Lily Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="emily">
+        <IndivName>Emily Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="frank">
+        <IndivName>Frank Butcher</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="millie">
+        <IndivName>Millie Butcher</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    
+    <IndividualRec Id="sam">
+        <IndivName>Sam Butcher</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="tipsy">
+        <IndivName>Tipsy Butcher</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    
+    <IndividualRec Id="pedro">
+        <IndivName>Pedro Churchill</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    
+    <IndividualRec Id="century">
+        <IndivName >Century Churchill</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="fox">
+        <IndivName >Fox Churchill</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="submitter">
+        <IndivName >Stian Johansen</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="emanuel">
+        <IndivName >Emanuel Coroner</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="cherry">
+        <IndivName >Cherry Coroner</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="angel">
+        <IndivName >Angel Coroner</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="emma">
+        <IndivName >Emma Coroner</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="dork">
+        <IndivName >Dork Butcher</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="dooley">
+        <IndivName >Dooley Butcher</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="lizzy">
+        <IndivName >Lizzy Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="ahmed">
+        <IndivName >Ahmed Charleston</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="xin">
+        <IndivName >Xin Charleston</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="filly">
+        <IndivName >Filly Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="tic">
+        <IndivName >Tic Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="xon">
+        <IndivName >Xon Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="tac">
+        <IndivName >Tac Charleston</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="toe">
+        <IndivName >Toe Charleston</IndivName>
+        <Gender>Male</Gender>
+    </IndividualRec>
+    <IndividualRec Id="rebel">
+        <IndivName >Rebel Baptista</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+    <IndividualRec Id="eileen">
+        <IndivName >Eileen Baptista</IndivName>
+        <Gender>Female</Gender>
+    </IndividualRec>
+</GEDCOM>
+

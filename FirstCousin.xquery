@@ -13,8 +13,9 @@ declare function functx:last-node
    ($nodes/.)[1]
  } ;
 
-<firstCousins>
+<html><head><title>First Cousins</title></head>
 {
+
 for $fam in doc("family1.xml")/GEDCOM/FamilyRec
 let $maybeFirstChild := functx:first-node($fam/Child)
 let $maybeSecondChild := functx:last-node($fam/Child)
@@ -25,12 +26,14 @@ let $isFamilyDecendantRight := ($fam3/HusbFath/Link/@Ref = $maybeSecondChild/Lin
 let $areNotTheSameChildren := $fam3/Child/Link/@Ref != $fam2/Child/Link/@Ref
 where ( $isFamilyDecendantLeft and $isFamilyDecendantRight and $areNotTheSameChildren)
 return (
-<CousinLeft>
-{$fam2/Child/Link}
-</CousinLeft>,
-<CousinRight>
-{$fam3/Child/Link}
-</CousinRight>
+<body>
+<div id="CousinLeft">
+{fn:string-join(//IndividualRec[@Id = ($fam2/Child/Link/@Ref)]/IndivName/text(),', ')}
+</div>
+<div id="CousinRight">
+{fn:string-join(//IndividualRec[@Id = ($fam3/Child/Link/@Ref)]/IndivName/text(),', ')}
+</div>
+</body>
 )
 }
-</firstCousins>
+</html>
