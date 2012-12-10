@@ -22,10 +22,12 @@ for $fam2 in doc("family1.xml")/GEDCOM/FamilyRec
 for $fam3 in doc("family1.xml")/GEDCOM/FamilyRec
 for $fam4 in doc("family1.xml")/GEDCOM/FamilyRec
 for $fam5 in doc("family1.xml")/GEDCOM/FamilyRec
-let $isFamilyDecendantLeft := ($fam4/HusbFath/Link/@Ref = $fam2/Child/Link/@Ref or $fam4/WifeMoth/Link/@Ref = $fam2/Child/Link/@Ref) and ($fam2/HusbFath/Link/@Ref = $maybeFirstChild/Link/@Ref or $fam2/WifeMoth/Link/@Ref = $maybeFirstChild/Link/@Ref)
-let $isFamilyDecendantRight := ($fam5/HusbFath/Link/@Ref = $fam3/Child/Link/@Ref or $fam5/WifeMoth/Link/@Ref = $fam3/Child/Link/@Ref) and ($fam3/HusbFath/Link/@Ref = $maybeSecondChild/Link/@Ref or $fam3/WifeMoth/Link/@Ref = $maybeSecondChild/Link/@Ref)
-let $areNotTheSameChildren := $fam3/Child/Link/@Ref != $fam2/Child/Link/@Ref
-where ( $isFamilyDecendantLeft and $isFamilyDecendantRight and $areNotTheSameChildren)
+let $isFamilyDecendantLeft := ($fam2/HusbFath/Link/@Ref = $maybeFirstChild/Link/@Ref or $fam2/WifeMoth/Link/@Ref = $maybeFirstChild/Link/@Ref)
+let $isFamilyDecendantRight := ($fam3/HusbFath/Link/@Ref = $maybeSecondChild/Link/@Ref or $fam3/WifeMoth/Link/@Ref = $maybeSecondChild/Link/@Ref)
+let $isFamily2ndDecendantLeft := ($fam4/HusbFath/Link/@Ref = $fam2/Child/Link/@Ref or $fam4/WifeMoth/Link/@Ref = $fam2/Child/Link/@Ref) and $isFamilyDecendantLeft
+let $isFamily2ndDecendantRight := ($fam5/HusbFath/Link/@Ref = $fam3/Child/Link/@Ref or $fam5/WifeMoth/Link/@Ref = $fam3/Child/Link/@Ref) and $isFamilyDecendantRight
+let $areNotTheSameChildren := $fam4/Child/Link/@Ref != $fam5/Child/Link/@Ref
+where ( $isFamily2ndDecendantLeft and $isFamily2ndDecendantRight and $areNotTheSameChildren)
 return (
 <CousinLeft>
 {$fam4/Child/Link}
